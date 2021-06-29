@@ -72,6 +72,7 @@
 
             //Заголовок -корзина-
             <TextView
+                style="@style/text_view_custom_style"
                 android:id="@+id/tvBasketText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -129,6 +130,9 @@
                     android:hint="Укажите дополнительную информацию"
                     android:textColorHint="@color/textHintComment"
                     android:textAlignment="textStart"
+                    android:padding="8dp"
+
+                    android:gravity="top"
                     android:background="@color/backgroundComment"
                     />
             </FrameLayout>
@@ -171,12 +175,14 @@
             <RadioGroup
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layoutDirection="rtl"
                 >
 
                 <RadioButton
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
                     android:text="Оплата картой"
+
                     android:textSize="16dp"
                     />
                 <RadioButton
