@@ -1,5 +1,8 @@
 package com.example.swiftbookapp
 
+import LessonKotlin.Animalble
+import LessonKotlin.Cat
+import LessonKotlin.Dog
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -12,38 +15,15 @@ class MainActivity : AppCompatActivity() {
     super.onCreate(savedInstanceState)
     setContentView(R.layout.basket_layout)
 
-    val radiusCircle: Double = 5.0
-    val sideSquare  : Double = 5.0
-    val circleArea = this.areaOfCircleCalculator(radiusCircle)
-    val squareArea = this.areaOfSquareCalculator(sideSquare)
 
-    val comparisonResult = this.compareTheAreaOfSquareAndCircle(squareArea, circleArea)
+    val dog: Animalble = Dog()
+    val cat: Animalble = Cat()
 
-  }
-  //S = π * r2
-  private fun areaOfCircleCalculator(x: Double): Double {
-    val result = PI * (x * x)
-    return result
-  }
-  //S = a2
-  private fun areaOfSquareCalculator(x: Double): Double {
-    val result = x * x
-    return result
+    dog.voice()
+    cat.voice()
+
+    (dog as? Dog)?.bite()
+    (cat as? Cat)?.scratch()
   }
 
-  private fun compareTheAreaOfSquareAndCircle(square: Double, circle: Double): String {
-
-    val result = when (true) {
-
-      square == circle -> "Площади равны"
-
-      square > circle -> "Площадь квадрата больше"
-
-      square < circle -> "Площадь круга больше"
-
-      else -> "Резултат не известен"
-
-    }
-    return result
-  }
 }
