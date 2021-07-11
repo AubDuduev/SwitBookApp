@@ -9,6 +9,8 @@ class GeometricFigures {
     val squareArea = this.areaOfSquareCalculator(sideSquare)
 
     val comparisonResult = this.compareTheAreaOfSquareAndCircle(squareArea, circleArea)
+
+    print(comparisonResult)
   }
 
   //S = π * r2
