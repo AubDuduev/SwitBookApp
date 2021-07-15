@@ -4,20 +4,47 @@ import LessonKotlin.Animalble
 import LessonKotlin.Cat
 import LessonKotlin.Dog
 import LessonKotlin.Person
+import Models.UserData
+import android.app.Activity
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
-import java.lang.Math.PI
-import java.lang.Math.pow
 import java.util.*
-import kotlin.math.sqrt
-import kotlin.random.Random.Default.nextInt
 
-class MainActivity : AppCompatActivity() {
+class BasketActivity : AppCompatActivity() {
+
+
   override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(savedInstanceState)
-    setContentView(R.layout.basket_layout)
+    setContentView(R.layout.basket_activity)
 
+    this.getUserData()
+  }
+
+  private fun getUserData(){
+
+    val userData = intent.getSerializableExtra(USER_DATA_KEY) as UserData
+
+    Log.d("TAG", "${userData.number}")
+
+  }
+
+  companion object {
+    private const val USER_DATA_KEY = "userDataKey"
+
+    fun newInstance(fromActivity: Activity, userData: UserData) {
+      val myIntent = Intent(fromActivity, BasketActivity::class.java).apply {
+        putExtra(USER_DATA_KEY, userData)
+      }
+      fromActivity.startActivity(myIntent)
+
+    }
+  }
+
+
+  
+  private fun lessons(){
     //Kotlin 2.5 Урок 2
     val dog: Animalble = Dog()
     val cat: Animalble = Cat()
@@ -54,6 +81,5 @@ class MainActivity : AppCompatActivity() {
       print("Person name: ${it.name}")
     }
   }
-
 
 }
