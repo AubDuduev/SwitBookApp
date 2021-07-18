@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">SwiftBookApp</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="startPreviewText">Привет! Сегодня мы приготовим самое вкусное приложение!</string>
+    <string name="moreNoShow">Больше не показывать</string>
 </resources>
