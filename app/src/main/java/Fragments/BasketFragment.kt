@@ -1,6 +1,7 @@
 package Fragments
 
 import Activity.MainActivity
+import Interfaces.MainNavigationInterface
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
@@ -18,8 +19,6 @@ import com.example.swiftbookapp.databinding.BasketFragmnetBinding
 class BasketFragment : Fragment() {
 
   private lateinit var numberPhoneUser: String
-  private lateinit var txvPhoneNumber : TextView
-  private lateinit var ibExit         : ImageButton
   private lateinit var binding        : BasketFragmnetBinding
 
   override fun onCreate(savedInstanceState: Bundle?) {
@@ -32,24 +31,32 @@ class BasketFragment : Fragment() {
   }
   override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
     super.onViewCreated(view, savedInstanceState)
-    this.createElement(view)
     this.setNumber()
     this.addListenerExitButton()
-  }
-
-  private fun createElement(view: View){
-    this.txvPhoneNumber = this.binding.tvPhoneNumber
-    this.ibExit         = this.binding.ibExit
+    this.addListenerProductDetailButton()
   }
 
   private fun setNumber(){
     this.numberPhoneUser = arguments?.getString(PHONE_NUMBER_KEY).toString()
-    this.txvPhoneNumber.text = this.numberPhoneUser
+    this.binding.tvPhoneNumber.text = this.numberPhoneUser
   }
-
+  private fun addListenerProductDetailButton(){
+    this.binding.ilDishInfoOne.ivDish.setOnClickListener() {
+      (activity as MainNavigationInterface).createProductDetail()
+      Log.d("TAG", "Detail product")
+    }
+    this.binding.ilDishInfoTwo.ivDish.setOnClickListener() {
+      (activity as MainNavigationInterface).createProductDetail()
+      Log.d("TAG", "Detail product")
+    }
+    this.binding.ilDishInfoThree.ivDish.setOnClickListener() {
+      (activity as MainNavigationInterface).createProductDetail()
+      Log.d("TAG", "Detail product")
+    }
+  }
   private fun addListenerExitButton(){
-    this.ibExit.setOnClickListener {
-      (activity as MainActivity).supportFragmentManager.popBackStack()
+    this.binding.ibExit.setOnClickListener {
+      (activity as MainNavigationInterface).popBackStack()
         Log.d("TAG", "Exit")
     }
   }

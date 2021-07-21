@@ -4,4 +4,5 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="startPreviewText">Привет! Сегодня мы приготовим самое вкусное приложение!</string>
     <string name="moreNoShow">Больше не показывать</string>
+    <string name="productCardDescription">Бульон из пряного говяжьего мясного супа с кокосовым молоком, грибами, томатами, зеленью. Подается с добавками на выбор, отварным белым рисом или рисовой вермишелью на выбор</string>
 </resources>

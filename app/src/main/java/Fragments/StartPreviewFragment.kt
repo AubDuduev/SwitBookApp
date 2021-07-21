@@ -1,6 +1,7 @@
 package Fragments
 
 import Activity.MainActivity
+import Interfaces.MainNavigationInterface
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -33,7 +34,7 @@ class StartPreviewFragment : Fragment() {
     }
     private fun btnBeginListener(){
         this.btnBegin.setOnClickListener {
-            (activity as MainActivity).createAuthFragment()
+            (activity as MainNavigationInterface).createAuthFragment()
         }
     }
 }

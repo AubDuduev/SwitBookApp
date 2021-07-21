@@ -5,6 +5,7 @@ import android.os.Bundle
 
 import Fragments.AuthFragment
 import Fragments.BasketFragment
+import Fragments.ProductDetailFragment
 import Fragments.StartPreviewFragment
 import Interfaces.MainNavigationInterface
 import com.example.swiftbookapp.R
@@ -24,7 +25,7 @@ class MainActivity : AppCompatActivity(), MainNavigationInterface {
       .commit()
   }
 
-  public fun createAuthFragment(){
+  override fun createAuthFragment(){
     supportFragmentManager
       .beginTransaction()
       .add(R.id.clMainActivityRoot, AuthFragment())
@@ -40,6 +41,12 @@ class MainActivity : AppCompatActivity(), MainNavigationInterface {
       .commit()
   }
 
+  override fun createProductDetail() {
+   ProductDetailFragment().show(this.supportFragmentManager, "createProductDetail")
+  }
+  override fun popBackStack() {
+    this.supportFragmentManager.popBackStack()
+  }
   companion object {
     private const val BACK_STACK_ID = "BACK_STACK"
   }
