@@ -40,13 +40,19 @@ class AuthFragment: Fragment() {
   }
 
   private fun btnBeginListener(){
-
     btnBegin.setOnClickListener {
-      this.numberPhoneUser = this.etPhoneNumberUser.text.toString()
-      Log.d("TAG", "numberPhoneUser ${this.numberPhoneUser.toString()}")
-      (activity as? MainNavigationInterface)?.openBasketFragment(numberPhoneUser = this.numberPhoneUser.toString())
+      (activity as? MainNavigationInterface)?.createMenuFragment()
+      Log.d("TAG", "btnBeginListener")
     }
   }
+//  private fun btnBeginListener(){
+//
+//    btnBegin.setOnClickListener {
+//      this.numberPhoneUser = this.etPhoneNumberUser.text.toString()
+//      Log.d("TAG", "numberPhoneUser ${this.numberPhoneUser.toString()}")
+//      (activity as? MainNavigationInterface)?.openBasketFragment(numberPhoneUser = this.numberPhoneUser.toString())
+//    }
+//  }
 
 
 }

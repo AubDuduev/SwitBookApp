@@ -1,15 +1,17 @@
 package Activity
 
+import Fragments.*
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 
-import Fragments.AuthFragment
-import Fragments.BasketFragment
-import Fragments.ProductDetailFragment
-import Fragments.StartPreviewFragment
 import Interfaces.MainNavigationInterface
+import android.app.ProgressDialog.show
+import android.view.View
+import androidx.core.content.ContentProviderCompat.requireContext
 import com.example.swiftbookapp.R
 import com.example.swiftbookapp.databinding.StartPreviewFragmentBinding
+import com.google.android.material.bottomsheet.BottomSheetBehavior
+import com.google.android.material.bottomsheet.BottomSheetDialog
 
 class MainActivity : AppCompatActivity(), MainNavigationInterface {
 
@@ -41,8 +43,19 @@ class MainActivity : AppCompatActivity(), MainNavigationInterface {
       .commit()
   }
 
+  override fun createMenuFragment() {
+    supportFragmentManager
+      .beginTransaction()
+      .add( R.id.clMainActivityRoot, MenuFragment())
+      .addToBackStack(BACK_STACK_ID)
+      .commit()
+
+  }
   override fun createProductDetail() {
-   ProductDetailFragment().show(this.supportFragmentManager, "createProductDetail")
+
+    val dialog = ProductDetailFragment()
+    dialog.show(this.supportFragmentManager, "createProductDetail")
+
   }
   override fun popBackStack() {
     this.supportFragmentManager.popBackStack()
