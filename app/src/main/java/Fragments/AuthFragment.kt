@@ -41,7 +41,7 @@ class AuthFragment: Fragment() {
 
   private fun btnBeginListener(){
     btnBegin.setOnClickListener {
-      (activity as? MainNavigationInterface)?.createMenuFragment()
+      (activity as? MainNavigationInterface)?.pushBottomMenuActivity()
       Log.d("TAG", "btnBeginListener")
     }
   }

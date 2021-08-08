@@ -6,5 +6,5 @@ interface MainNavigationInterface {
   fun createAuthFragment()
   fun popBackStack()
   fun createProductDetail()
-  fun createMenuFragment()
+  fun pushBottomMenuActivity()
 }

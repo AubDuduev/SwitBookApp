@@ -1,5 +1,6 @@
 package Fragments
 
+import Models.Dish
 import android.app.Dialog
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -7,24 +8,21 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.example.swiftbookapp.R
+import com.example.swiftbookapp.databinding.ProductDetailFragmentBinding
 import com.google.android.material.bottomsheet.BottomSheetBehavior
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 
 class ProductDetailFragment : BottomSheetDialogFragment() {
 
+  lateinit var binding: ProductDetailFragmentBinding
 
-  override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
-    return BottomSheetDialog(requireContext(), theme).apply {
-      behavior.state = BottomSheetBehavior.STATE_EXPANDED
-    }
-  }
   override fun onCreateView(
     inflater: LayoutInflater, container: ViewGroup?,
     savedInstanceState: Bundle?
   ): View? {
-    // Inflate the layout for this fragment
-    return inflater.inflate(R.layout.product_detail_fragment, container, false)
+    this.binding = ProductDetailFragmentBinding.inflate(layoutInflater, container, false)
+    return this.binding.root
   }
 
 }

@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="100dp"
+    android:layout_marginLeft="16dp"
+    android:layout_marginRight="16dp"
+    android:layout_marginTop="8dp"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/clBasketDishInfoLayout">
 
@@ -9,7 +12,6 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="50dp"
         android:elevation="6dp"
         android:translationZ="4dp"
         android:background="@drawable/background_basket_item"
@@ -24,7 +26,8 @@
             android:src="@drawable/dish"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            />
 
         <TextView
             android:id="@+id/tvNameDish"
@@ -33,9 +36,11 @@
             android:text="Том Ям суп с морепродуктами"
             android:textColor="@color/black"
             app:layout_constraintBottom_toTopOf="@+id/tvCountDish"
-            app:layout_constraintStart_toEndOf="@id/ivDish"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_chainStyle="spread" />
+            app:layout_constraintVertical_chainStyle="spread"
+            android:layout_marginLeft="75dp"
+            />
 
         <TextView
             android:id="@+id/tvCountDish"
@@ -46,7 +51,8 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="@id/tvNameDish"
             app:layout_constraintTop_toBottomOf="@+id/tvNameDish"
-            app:layout_constraintVertical_chainStyle="spread" />
+            app:layout_constraintVertical_chainStyle="spread"
+            />
 
         <ImageView
             android:id="@+id/btCloseItem"
@@ -57,7 +63,8 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:tint="@color/mainGreen" />
+            app:tint="@color/mainGreen"
+            />
 
         <TextView
             android:layout_width="52dp"
@@ -67,9 +74,11 @@
             android:text="470 р"
             android:textAlignment="center"
             android:textColor="@color/white"
+            android:id="@+id/tvPrice"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@id/btCloseItem"
-            app:layout_constraintTop_toBottomOf="@id/tvNameDish" />
+            app:layout_constraintTop_toBottomOf="@id/tvNameDish"
+            />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
